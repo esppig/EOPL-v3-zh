@@ -27,7 +27,7 @@ module.exports = {
         sidebar: [
             {
                 text: '前言',
-                link: '/content/forward.md'
+                link: '/content/foreword.md'
             },
             {
                 text: '序言',

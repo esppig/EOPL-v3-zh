@@ -6,7 +6,7 @@
 
 ## 目录
 
-- [前言 Forward](content/forward.md)
+- [前言 Foreword](content/foreword.md)
 - [序言 Preface](content/preface.md)
 - [第1章 Inductive Sets of Data](content/ch01.md)
 - [第2章 Data Abstraction](content/ch02.md)
