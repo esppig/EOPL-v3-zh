@@ -97,8 +97,84 @@ Chapter 5 rewrites our basic interpreter in continuation-passing style. The cont
 > 第5章， 我们使用CPS风格，重写了基础解释器。因此，运行解释器所需的控制结构从递归转移到迭代。这揭示了解释型语言的控制机制，增强了对控制问题的直觉。它还允许我们使用"trampolining(蹦床)"、异常处理和多线程机制扩展语言。
 
 
+Chapter 6 is the companion to the previous chapter.
+There we show how to transform our familiar interpreter into continuation-passing style; here we show how to accomplish this for a much larger class of programs.
+Continuation-passing style is a powerful programming tool, for it allows any sequential control mechanism to be implemented in almost any language.
+The algorithm is also an example of an abstractly specified source-to-source program transformation.
 
+> 第六章是前一章的姊妹篇。
+> 上一章我们展示了如何将我们熟悉的解释器转换为延续传递方式(CPS); 而这一章我们展示如何在更大的程序类中完成这一转换。
+> CPS是一个强大的编程工具，因为它允许任何顺序控制机制在几乎任何语言中实现。
+> 该算法也是抽象指定源到源程序转换的一个例子。
+
+
+Chapter 7 turns the language of chapter 3 into a typed language. First we implement a type checker. Then we show how the types in a program can be deduced by a unification based type inference algorithm.
+
+> 第七章将第三章的语言转化为类型化语言。首先，我们实现一个类型检查器。然后，我们演示了如何通过基于统一的类型推理算法来推导程序中的类型。
+
+
+Chapter 8 builds typed modules relying heavily on an understanding of the previous chapter. Modules allow us to build and enforce abstraction boundaries, and they offer a new kind of scoping.
+
+> 第8章主要依赖于对前一章的理解构建类型化模块。模块允许我们构建和执行抽象边界，并且它们提供了一种新的作用域。
+
+
+Chapter 9 presents the basic concepts of object-oriented languages, centered on classes. We first develop an efficient run-time architecture, which is used as the basis for the material in the second part of the chapter. The second part combines the ideas of the type checker of chapter 7 with those of the object-oriented language of the first part, leading to a conventional typed object-oriented language. This requires introducing new concepts including interfaces, abstract methods, and casting.
+
+> 第9章介绍了以类为中心的面向对象语言的基本概念。我们首先开发了一个高效的运行时体系结构，该体系结构用作本章第二部分内容的基础。第二部分将第七章类型检查器的思想与第一部分面向对象语言的思想相结合，形成了一种传统的面向对象类型语言。这需要引入新的概念，包括接口、抽象方法和强制转换。
+
+
+For *Further Reading* explains where each of the ideas in the book has come from. This is a personal walk-through allowing the reader the opportunity to visit each topic from the original paper, though in some cases, we have just chosen an accessible source.
+
+> 在进一步的阅读内容中，解释了本书中的每一个想法是的来源。根据个人的需要，让访问原始论文的每一个主题，虽然在某些情况下，我们只是选择了一个可访问的来源。
+
+
+Finally, appendix B describes our SLLGEN parsing system.
+
+> 最后，附录B 描述了我们的 SLLGEN 解析系统。
+
+
+The dependencies of the various chapters are shown in the figure below.
+
+> 主要的章节依赖如下:
+
+```
+                     5️⃣ → 6️⃣
+                   ↗
+1️⃣ → 2️⃣ → 3️⃣ → 4️⃣        8️⃣
+                   ↘    ↗
+                     7️⃣
+                        ↘
+                          9️⃣
+```
 
 ## Usage
 
 > 使用
+
+
+This material has been used in both undergraduate and graduate courses.
+Also, it has been used in continuing education courses for professional programmers. We assume background in data structures and experience both in a procedural language such as C, C++, or Java, and in Scheme, ML, Python, or Haskell.
+
+> 这本材料在本科和研究生的课程中都被使用。此外，它还被用于专业程序员的再教育课程。
+> 我们假设你有数据结构的背景，并且在诸如 C，C++，Java 这样的过程式语言 和 Scheme，ML，Python，Haskell等方面有经验。
+
+
+Exercises are a vital part of the text and are scattered throughout. They range in difficulty from being trivial if related material is understood [*], to requiring many hours of thought and programming work [* * *]. A great deal of material of applied, historical, and theoretical interest resides within them. We recommend that each exercise be read and some thought be given as to how to solve it. Although we write our program interpretation and transformation systems in Scheme, any language that supports both first-class procedures and assignment (ML, Common Lisp, Python, Ruby, etc.) is adequate for working the exercises.
+
+> 练习是正文内容的重要组成部分，它们分散在各个角落。它们的难度范围从，只需要片刻时间就能够理解相关的内容[ * ]，到可能需要花费数小时的思考和编程[ * * * ]。练习中存在着大量的应用，历史，理论等。我们建议阅读每个练习，并对如何解决这个问题进行一些思考。尽管我们使用 Scheme 编写程序解释器和转换系统，但任何支持first-class过程和赋值(ML、 Common Lisp、 Python、 Ruby 等)的语言都可以完成这些练习。
+
+
+Exercise 0.1 [*] We often use phrases like “some languages have property X.” For each such phrase, find one or more languages that have the property and one or more languages that do not have the property. Feel free to ferret out this information from any descriptive book on programming languages (say Scott (2005), Sebesta (2007), or Pratt & Zelkowitz (2001)).
+
+> ...
+
+
+This is a hands-on book: everything discussed in the book may be implemented within the limits of a typical university course. Because the abstraction facilities of functional programming languages are especially suited to this sort of programming, we can write substantial language-processing systems that are nevertheless compact enough that one can understand and manipulate them with reasonable effort.
+
+> 这是一本实践性很强的书: 书中讨论的所有内容都可以在一个典型的大学课程范围内实现。因为函数式编程语言的抽象机制特别适合这种编程，所以我们可以编写大量的语言处理系统，这些系统足够紧凑，人们可以通过适当的努力来理解和操作它们。
+
+
+The web site, available through the publisher, includes complete Scheme code for all of the interpreters and analyzers in this book. The code is written in PLT Scheme. We chose this Scheme implementation because its module system and programming environment provide a substantial advantage to the student. The code is largely R5RS-compatible, and should be easily portable to any full-featured Scheme implementation
+
+> 本书中，Scheme解释器和分析器的完整代码都可以在出版商的网站上获取。 代码是用 PLT-Scheme 编写的。我们之所以选择这个Scheme方言，是因为它的模块系统和编程环境为学生提供了极大的便利。代码基本上是 r5rs 兼容的，并且应该易于移植到任何功能齐全的 Scheme 实现中。
+
