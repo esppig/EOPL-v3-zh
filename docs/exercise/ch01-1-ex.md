@@ -1,14 +1,12 @@
 Exercise 1.1 [*] Write inductive definitions of the following sets. Write each definition in all three styles (top-down, bottom-up, and rules of inference). Using your rules, show the derivation of some sample elements of each set.
 
+> 练习 1.1 [*] 写出下列集合的归纳定义。用所有三种风格(自顶向下、自底向上和推理规则)编写每个定义。使用您的规则，描述每个集合的一些示例元素。
+
 1. {3n + 2 |n ∈ N}
 2. {2n + 3m + 1 |n, m ∈ N}
 3. {(n, 2n + 1) |n ∈ N}
-4. {(n, n^2) |n ∈ N}
+4. {(n, n^2) |n ∈ N} Do not mention squaring in your rules. As a hint, remember the equation (n + 1)^2 = n^2 + 2n + 1.
 
-Do not mention squaring in your rules. As a hint, remember the equation (n + 1)^2 = n^2 + 2n + 1.
-
-> 练习 1.1 [*] 写出下列集合的归纳定义。用所有三种风格(自顶向下、自底向上和推理规则)编写每个定义。使用您的规则，描述每个集合的一些示例元素。
->
 > PS: 不要在你的规则中提到平方. 提示一下，记住这个等式 `(n + 1)^2 = n^2 + 2n + 1` 。
 
 Solution-1: 
@@ -107,6 +105,8 @@ Solution-4:
 
 Exercise 1.2 [* *] What sets are defined by the following pairs of rules? Explain why.
 
+> 练习 1.2 [* *] 什么样的集合是由以下几对规则定义的? 请解释原因。
+
 1. 
    ```
    (0, 1) ∈ S 
@@ -146,8 +146,6 @@ Exercise 1.2 [* *] What sets are defined by the following pairs of rules? Explai
    -------------------
    (n + 1, i + 2, i + j) ∈ S
    ```
-
-> 练习 1.2 [* *] 什么样的集合是由以下几对规则定义的? 请解释原因。
 
 
 Solution-1: (n, k) -> (n + 1, k + 7)
@@ -190,7 +188,7 @@ j: 0  1  4  9  16 25 36
 n, 2n+1, n^2
 
 
-
+---
 
 Exercise 1.3 [*] Find a set T of natural numbers such that 0 ∈ T, and whenever n ∈ T, then n + 3 ∈ T, but T ∉ S, where S is the set defined in definition 1.1.2.
 
@@ -201,3 +199,23 @@ Solution-1:
 S = { 3n | n ∈ N }
 
 T = { n != 1 | n ∈ N }
+
+
+---
+
+Exercise 1.4 [*] Write a derivation from *List-of-Int* to *(-7 . (3 . (14 . ())))*.
+
+> 练习 1.4 [*] 写出从 List-of-Int 到 `(-7 . (3 . (14 . ())))` 的推导过程.
+
+Solution-1:
+
+```
+   List-of-Int
+=> (Int . List-of-Int)
+=> (Int . (Int . List-of-Int))
+=> (Int . (Int . (Int . List-of-Int)))
+=> (Int . (Int . (Int . ())))
+=> (Int . (Int . (14 . ())))
+=> (Int . (3 . (14 . ())))
+=> (-7 . (3 . (14 . ())))
+```
