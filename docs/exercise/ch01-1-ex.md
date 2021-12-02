@@ -219,3 +219,22 @@ Solution-1:
 => (Int . (3 . (14 . ())))
 => (-7 . (3 . (14 . ())))
 ```
+
+
+---
+
+Exercise 1.5 [\* \*] Prove that if *e ∈ LcExp*, then there are the same number of left and right parentheses in *e*.
+
+> 练习 1.5 [* *] 证明 如果 `e ∈ LcExp` ，那么在 `e` 中有相同数目的左和右括号。
+
+```
+LcExp ::= Identifier
+      ::= (lambda (Identifier) LcExp)
+      ::= (LcExp LcExp)
+```
+
+Solution-1:
+
+1. e 是 Identifier 形式, 0 括号。
+2. e 是 (lambda (Identifier) LcExp) 形式, 假设 LcExp 有 n 个开闭括号， e 就有 n+2 个 开闭括号。
+3. e 是 (LcExp LcExp) 形式, 假设第一个LcExp有 n 个开闭括号, 第二个LcExp有 m 个开闭括号, e 就有 n+m+1 个 开闭括号。
