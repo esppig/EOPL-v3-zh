@@ -1,7 +1,7 @@
 # Essentials of Programming Languages
 
 <div style="margin: 0 auto;">
-  <img src="/images/cover.jpg" title="cover"/>
+  <img src="/images/cover.png" title="cover"/>
 </div>
 
 ## 目录
